@@ -23,7 +23,7 @@ import com.tka.sams.api.service.UserService;
 
 @RestController
 @RequestMapping("/attendance")
-@CrossOrigin("http://localhost:4200")
+@CrossOrigin("http://localhost:3000")
 
 public class AttendanceController {
 

@@ -19,7 +19,7 @@ import com.tka.sams.api.service.SubjectService;
 
 @RestController
 @RequestMapping("/subject")
-@CrossOrigin("http://localhost:4200")
+@CrossOrigin("http://localhost:3000")
 public class SubjectController {
 
 	@Autowired
@@ -32,7 +32,6 @@ public class SubjectController {
 
 	@PostMapping("/add-subject")
 	@CrossOrigin(methods = RequestMethod.POST)
-
 	public Subject createSubject(@RequestBody Subject subject) {
 		return subjectService.createSubject(subject);
 	}
