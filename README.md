@@ -160,7 +160,7 @@ Controller  →  Service  →  DAO  →  MySQL
 - MySQL 8 (database `attendance` is auto-created on first run via `createDatabaseIfNotExist=true`)
 - Hibernate-native `Session` + `Criteria` API for data access (no `JpaRepository` interfaces)
 - Maven (with the Maven wrapper — `./mvnw`)
-- Frontend (separate repo, not in this one): Angular on `http://localhost:4200`, which the API's CORS config is locked to
+- Frontend (separate repo, not in this one): React on `http://localhost:4200`, which the API's CORS config is locked to
 
 ---
 
