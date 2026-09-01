@@ -1,6 +1,6 @@
 # SamsTrack — Student Attendance Management System (REST API)
 
-A Spring Boot + MySQL REST API for taking and tracking student attendance, with role-based users (admin and faculty) and full CRUD over students, subjects, and attendance records. The API is consumed by a separate Angular frontend running on `http://localhost:4200`.
+A Spring Boot + MySQL REST API for taking and tracking student attendance, with role-based users (admin and faculty) and full CRUD over students, subjects, and attendance records. The API is consumed by a separate React frontend running on `http://localhost:4200`.
 
 Repo: https://github.com/Mr-robot28/SAMSTRACK_API
 Postman collection: `SAMSTRACK_API.postman_collection.json` (in this repo)
