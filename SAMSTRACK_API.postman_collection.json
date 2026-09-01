@@ -1,0 +1,367 @@
+{
+  "info": {
+    "_postman_id": "samstrack-api-collection-001",
+    "name": "SamsTrack API",
+    "description": "Full Postman collection for the SamsTrack Student Attendance Management System REST API. Covers User (login, register, CRUD, role filters), Student (CRUD), Subject (CRUD), and Attendance (take, list all, filter by date + subject).\n\nDefault baseUrl is http://localhost:8091. Change the `baseUrl` collection variable to point at any deployed instance.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:8091",
+      "type": "default"
+    }
+  ],
+  "item": [
+    {
+      "name": "User",
+      "item": [
+        {
+          "name": "Login User",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/user/login-user",
+              "host": ["{{baseUrl}}"],
+              "path": ["user", "login-user"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"faculty01\",\n  \"password\": \"pass1234\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Register User",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/user/register-user",
+              "host": ["{{baseUrl}}"],
+              "path": ["user", "register-user"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"faculty01\",\n  \"password\": \"pass1234\",\n  \"firstName\": \"Asha\",\n  \"lastName\": \"Kumar\",\n  \"email\": \"asha@example.com\",\n  \"role\": \"faculty\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Get User By Username",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/user/get-user-by-username/faculty01",
+              "host": ["{{baseUrl}}"],
+              "path": ["user", "get-user-by-username", "faculty01"]
+            }
+          }
+        },
+        {
+          "name": "Get All Users",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/user/get-all-user",
+              "host": ["{{baseUrl}}"],
+              "path": ["user", "get-all-user"]
+            }
+          }
+        },
+        {
+          "name": "Get All Admins",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/user/get-all-admin",
+              "host": ["{{baseUrl}}"],
+              "path": ["user", "get-all-admin"]
+            }
+          }
+        },
+        {
+          "name": "Get All Faculties",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/user/get-all-faculty",
+              "host": ["{{baseUrl}}"],
+              "path": ["user", "get-all-faculty"]
+            }
+          }
+        },
+        {
+          "name": "Update User",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/user/update-user",
+              "host": ["{{baseUrl}}"],
+              "path": ["user", "update-user"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"faculty01\",\n  \"password\": \"newpass5678\",\n  \"firstName\": \"Asha\",\n  \"lastName\": \"Kumar\",\n  \"email\": \"asha@example.com\",\n  \"role\": \"faculty\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Delete User By Username",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/user/delete-user-by-username?username=faculty01",
+              "host": ["{{baseUrl}}"],
+              "path": ["user", "delete-user-by-username"],
+              "query": [
+                {
+                  "key": "username",
+                  "value": "faculty01"
+                }
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Student",
+      "item": [
+        {
+          "name": "Add Student",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/student/add-student",
+              "host": ["{{baseUrl}}"],
+              "path": ["student", "add-student"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Ravi Sharma\",\n  \"email\": \"ravi@example.com\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Get All Students",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/student/get-all-students",
+              "host": ["{{baseUrl}}"],
+              "path": ["student", "get-all-students"]
+            }
+          }
+        },
+        {
+          "name": "Get Student By Id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/student/get-student-by-id/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["student", "get-student-by-id", "1"]
+            }
+          }
+        },
+        {
+          "name": "Update Student",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/student/update-student",
+              "host": ["{{baseUrl}}"],
+              "path": ["student", "update-student"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 1,\n  \"name\": \"Ravi Sharma\",\n  \"email\": \"ravi.new@example.com\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Delete Student",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/student/delete-student/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["student", "delete-student", "1"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Subject",
+      "item": [
+        {
+          "name": "Add Subject",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/subject/add-subject",
+              "host": ["{{baseUrl}}"],
+              "path": ["subject", "add-subject"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"name\": \"Mathematics\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Get All Subjects",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/subject/get-all-subjects",
+              "host": ["{{baseUrl}}"],
+              "path": ["subject", "get-all-subjects"]
+            }
+          }
+        },
+        {
+          "name": "Get Subject By Id",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/subject/get-subject-by-id/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["subject", "get-subject-by-id", "1"]
+            }
+          }
+        },
+        {
+          "name": "Update Subject",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/subject/update-subject",
+              "host": ["{{baseUrl}}"],
+              "path": ["subject", "update-subject"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"id\": 1,\n  \"name\": \"Advanced Mathematics\"\n}"
+            }
+          }
+        },
+        {
+          "name": "Delete Subject",
+          "request": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/subject/delete-subject/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["subject", "delete-subject", "1"]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Attendance",
+      "item": [
+        {
+          "name": "Take Attendance",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/attendance/take-attendance",
+              "host": ["{{baseUrl}}"],
+              "path": ["attendance", "take-attendance"]
+            },
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"faculty01\",\n  \"subjectId\": 1,\n  \"date\": \"2026-09-01\",\n  \"time\": \"10:30\",\n  \"numberOfStudents\": 2,\n  \"studentIds\": [1, 2]\n}"
+            }
+          }
+        },
+        {
+          "name": "Get All Attendance Records",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/attendance/get-all-attendance-records",
+              "host": ["{{baseUrl}}"],
+              "path": ["attendance", "get-all-attendance-records"]
+            }
+          }
+        },
+        {
+          "name": "Get Attendance By Date And Subject",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{baseUrl}}/attendance/get-attendance-by-date-subjet/2026-09-01/1",
+              "host": ["{{baseUrl}}"],
+              "path": ["attendance", "get-attendance-by-date-subjet", "2026-09-01", "1"]
+            }
+          }
+        }
+      ]
+    }
+  ]
+}
